@@ -6,5 +6,15 @@ class MyExamplesController < ApplicationController
   end
 
   def lotto_numbers
+    lotto_number = []
+    6.times do |number|
+      number = rand(59) + 1
+      lotto_number << number
+    end
+    render json: lotto_number.join(" ")
+  end
+
+  def page_visits
+    index = 0
   end
 end
