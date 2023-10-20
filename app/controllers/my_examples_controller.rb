@@ -1,8 +1,7 @@
 class MyExamplesController < ApplicationController
   def fortune
-    array = ["You will meet someone nice today!", "You will find a lost object", "You will meet someone nice tom"]
-    number = rand(3)
-    render json: array[number]
+    fortunes = ["You will meet someone nice today!", "You will find a lost object", "You will meet someone nice tom"]
+    render json: { fortune: fortunes.sample }
   end
 
   def lotto_numbers
@@ -28,6 +27,6 @@ class MyExamplesController < ApplicationController
         song << "what a waste of alcohol"
       end
     end
-    render json: [song].join()
+    render json: [song]
   end
 end
