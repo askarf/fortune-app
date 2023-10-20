@@ -13,10 +13,6 @@ class MyExamplesController < ApplicationController
     render json: { lotto_numbers: lotto_number }
   end
 
-  def page_visits
-    index = 0
-  end
-
   def bottles_of_beer
     song = []
     number = 100
@@ -28,5 +24,9 @@ class MyExamplesController < ApplicationController
       end
     end
     render json: [song]
+  end
+
+  def page_counter
+    render json: { "you are visitor": 2 }
   end
 end
