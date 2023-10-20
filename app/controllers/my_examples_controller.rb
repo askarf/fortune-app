@@ -17,4 +17,17 @@ class MyExamplesController < ApplicationController
   def page_visits
     index = 0
   end
+
+  def bottles_of_beer
+    song = []
+    number = 100
+    100.times do |time|
+      song << "#{number} bottles of beer ont the wall, take one down, pass it around #{number - 1} bottles of bear on the wall, "
+      number = number - 1
+      if number == 0
+        song << "what a waste of alcohol"
+      end
+    end
+    render json: [song].join()
+  end
 end
